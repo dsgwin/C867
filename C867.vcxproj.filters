@@ -15,25 +15,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\OneDrive - Legrand France\Documents\School\C867\main.cpp">
+    <ClInclude Include="degree.h">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\OneDrive - Legrand France\Documents\School\C867\roster.cpp">
+    </ClInclude>
+    <ClInclude Include="roster.h">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\OneDrive - Legrand France\Documents\School\C867\student.cpp">
+    </ClInclude>
+    <ClInclude Include="student.h">
       <Filter>Source Files</Filter>
-    </ClCompile>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\OneDrive - Legrand France\Documents\School\C867\degree.h">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\OneDrive - Legrand France\Documents\School\C867\roster.h">
+    </ClCompile>
+    <ClCompile Include="roster.cpp">
       <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\OneDrive - Legrand France\Documents\School\C867\student.h">
+    </ClCompile>
+    <ClCompile Include="student.cpp">
       <Filter>Source Files</Filter>
-    </ClInclude>
+    </ClCompile>
   </ItemGroup>
 </Project>
