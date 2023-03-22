@@ -127,7 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="C867.cpp" />
+    <ClCompile Include="..\..\..\OneDrive - Legrand France\Documents\School\C867\main.cpp" />
+    <ClCompile Include="..\..\..\OneDrive - Legrand France\Documents\School\C867\roster.cpp" />
+    <ClCompile Include="..\..\..\OneDrive - Legrand France\Documents\School\C867\student.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\OneDrive - Legrand France\Documents\School\C867\degree.h" />
+    <ClInclude Include="..\..\..\OneDrive - Legrand France\Documents\School\C867\roster.h" />
+    <ClInclude Include="..\..\..\OneDrive - Legrand France\Documents\School\C867\student.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
