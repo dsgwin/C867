@@ -9,24 +9,37 @@ public:
     // Default Constructor
     Student();
 
+    // Constructor to pass all student data and build object
+
+    Student(string id, string fname, string lname, string email, int studentAge, int days1, int days2, int days3, DegreeProgram degree);
+
+    // Print function to output all student data
+
+    void print();
+
     // Mutator Functions to Set Private Variables
-    void SetStudenId(string studentId);
-    void SetFirstName(string firstName);
-    void SetLastName(string lastName);
-    void SetEmailAddress(string emailAddress);
-    void SetAge(int age);
-    void SetDaysToComplete(int course, int days);
-    void SetDegreeProgram(enum degreeProgram);
+    void SetStudentId(string id);
+    void SetFirstName(string fName);
+    void SetLastName(string lName);
+    void SetEmailAddress(string email);
+    void SetAge(int studentAge);
+    void SetDaysToComplete(int days[]);
+    void SetDegreeProgram(DegreeProgram degree);
 
     // Accessor Functions to Get Private Variables
 
-    string GetFirstName();
+    string GetStudentId();
     string GetFirstName();
     string GetLastName();
     string GetEmailAddress();
     int GetAge();
-    int GetDaysToComplete();
-    enum GetDegreeProgram();
+    int* GetDaysToComplete();
+    DegreeProgram GetDegreeProgram();
+
+    // Define constant for number of courses to use with daysToComplete Array
+
+    static const int NUM_COURSES = 3;
+
 
 private:
     string studentId;
@@ -34,8 +47,8 @@ private:
     string lastName;
     string emailAddress;
     int age;
-    int daysToComplete[3];
-    enum degreeProgram;
+    int daysToComplete[NUM_COURSES];
+    DegreeProgram degreeProgram;
 
 
 };
