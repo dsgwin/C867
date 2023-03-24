@@ -1,9 +1,9 @@
 #include <string>
 #include <iostream>
 #define ROSTER_H
-#include "student.h"
-using namespace std;
 
+
+using namespace std;
 class Roster {
 
     public:
@@ -15,6 +15,10 @@ class Roster {
 
 	    Student* classRosterArray[NUM_STUDENTS];
 
+		// Default Contstructor
+
+		Roster();
+
 		// Declare parse() function to reformat studentDataTable strings and convert them to student objects
 
 		void parse(string studentDataString);
@@ -22,7 +26,7 @@ class Roster {
 	    // Declare Add function that sets the instance variables from part D1 and updates the roster
 		
 	    void add(string studentID, string firstName, string lastName, string emailAddress, int age, 
-			int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram);
+			int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
 
 		// Declare remove function that removes students from the roster by student ID. 
 		// If the student ID does not exist, the function prints an error message indicating that the student was not found.
@@ -40,4 +44,9 @@ class Roster {
 		// Declare printInvalidEmails() function
 
 		void printInvalidEmails();
+
+private:
+
+	int index;
+
 };

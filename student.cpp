@@ -17,7 +17,6 @@ Student::Student() {
 }
 
 // Constructor to pass all student data and build object
-
 Student::Student(string id, string fName, string lName, string email, int studentAge, int days1, int days2, int days3, DegreeProgram degree) {
 	this->studentId = id;
 	this->firstName = fName;
@@ -47,16 +46,16 @@ void Student::print() {
 		}
 	}
 	cout << '\t';
-    // Print Degree Program
+	// Print Degree Program
 
-    cout << degreeProgram;
-}
+	cout << this->degreeProgram;
+};
 
 // Mutator Functions to Set Private Variables
 
 void Student::SetStudentId(string id) {
 	this->studentId = id;
-}
+};
 
 void Student::SetFirstName(string fName) {
 	this->firstName = fName;
@@ -72,11 +71,13 @@ void Student::SetAge(int studentAge) {
 	this->age = studentAge;
 
 }
-void Student::SetDaysToComplete(int days[]) {
-	for (int i = 0; i < NUM_COURSES; i++) {
-		this->daysToComplete[i] = days[i];
-	}
-}
+void Student::SetDaysToComplete(int days1, int days2, int days3) {
+	this->daysToComplete[0] = days1;
+	this->daysToComplete[1] = days2;
+	this->daysToComplete[2] = days3;
+
+};
+
 void Student::SetDegreeProgram(DegreeProgram degree) {
 	this->degreeProgram = degree;
 

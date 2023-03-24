@@ -5,7 +5,7 @@
 using namespace std;
 
 class Student {
-public:
+  public:
     // Default Constructor
     Student();
 
@@ -23,7 +23,7 @@ public:
     void SetLastName(string lName);
     void SetEmailAddress(string email);
     void SetAge(int studentAge);
-    void SetDaysToComplete(int days[]);
+    void SetDaysToComplete(int days1, int days2, int days3);
     void SetDegreeProgram(DegreeProgram degree);
 
     // Accessor Functions to Get Private Variables
@@ -41,7 +41,7 @@ public:
     static const int NUM_COURSES = 3;
 
 
-private:
+  private:
     string studentId;
     string firstName;
     string lastName;

@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "student.h"
+#include "roster.h"
 using namespace std;
 
 // Define studentData Input Array 
@@ -15,11 +16,13 @@ const string studentData[] =
   "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
   "A5,Duncan,Gwin,dgwin4@wgu.edu,34,25,33,42,SOFTWARE" };
 
+
 int main()
 {
-	Student Duncan("A5", "Duncan", "Gwin", "dgwin4@wgu.edu", 34, 25, 33, 42, SOFTWARE);
-
-	Duncan.print();
+	for (int i = 0; i < 5; i++) {
+		parse(studentData[i]);
+		// cout << studentData[i] << endl;
+	}
 
 
 	return 0;
