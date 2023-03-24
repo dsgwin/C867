@@ -50,7 +50,13 @@ class Roster {
 
 		void printInvalidEmails();
 
+		// Declare printByDegreeProgram() function
+
+		void printByDegreeProgram(DegreeProgram degree);
+
 		// Declare Destructor
+
+		~Roster();
 
 
 	

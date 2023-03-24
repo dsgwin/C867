@@ -2,6 +2,7 @@
 #include <iostream>
 #include "roster.h"
 #include <iomanip>
+#include <regex>
 
 using namespace std;
 
@@ -69,11 +70,11 @@ void Roster::parse(string studentDataString) {
 	}
 
 	else if (strDegree == "NETWORK") {
-		degree = DegreeProgram::SECURITY;
+		degree = DegreeProgram::NETWORK;
 	}
 
 	else if (strDegree == "SOFTWARE") {
-		degree = DegreeProgram::SECURITY;
+		degree = DegreeProgram::SOFTWARE;
 	}
 
 	add(index, id, fName, lName, email, studentAge, days1, days2, days3, degree);
@@ -94,7 +95,29 @@ void Roster::add(int index, string studentID, string firstName, string lastName,
 
 void Roster::remove(string studentId) {
 
+	bool searchResult = false;
+
+	for (int i = 0; i < NUM_STUDENTS; ++i) {
+		if (classRosterArray[i] == nullptr) {
+			continue;
+		}
+		else if (studentId == classRosterArray[i]->GetStudentId()) {
+			searchResult = true;
+			delete classRosterArray[i];
+			classRosterArray[i] = nullptr;
+			break;
+		}
+	};
+
+	if (searchResult == true) {
+		cout << "Student ID \"" << studentId << "\" found. Successfully removed." << endl << endl;
+		}
+    else {
+		cout << "Error: Student ID \"" << studentId << "\" not found" << endl << endl;
+		}
+	
 };
+
 
 // Define printAll() function
 
@@ -104,8 +127,14 @@ void Roster::printAll() {
 
 	for (int i = 0; i < NUM_STUDENTS; ++i) {
 
-		classRosterArray[i]->print();
-		cout << endl;
+		if (classRosterArray[i] == nullptr) {
+			continue;
+		}
+		
+		else {
+		    classRosterArray[i]->print();
+		    cout << endl;
+	    }
 	}
 	cout << endl;
 
@@ -131,5 +160,58 @@ void Roster::printAverageDaysInCourse(string studentId) {
 // Define printInvalidEmails() function
 
 void Roster::printInvalidEmails() {
+	for (int i = 0; i < NUM_STUDENTS; ++i) {
+		string email = classRosterArray[i]->GetEmailAddress();
+		bool validEmail = true;
+		regex reg_space(" ");
+		regex reg_at("@");
+		regex reg_dot("\\.");
+
+		if (!regex_search(email, reg_dot)) {
+			validEmail = false;
+		}
+
+		else if (!regex_search(email, reg_at)) {
+			validEmail = false;
+		}
+
+		else if (regex_search(email, reg_space)) {
+			validEmail = false;
+		}
+
+		else {
+			validEmail = true;
+		}
+
+		if (validEmail == false) {
+			
+			cout << "Student ID " << classRosterArray[i]->GetStudentId() << "'s e-mail address \"" << email << "\" is invalid." << endl;
+		}
+	}
+	cout << endl;
+};
+
+// Define printByDegreeProgram() function
+
+void Roster::printByDegreeProgram(DegreeProgram degree) {
+	for (int i = 0; i < NUM_STUDENTS; ++i) {
+		if (classRosterArray[i]->GetDegreeProgram() != degree) {
+			continue;
+		}
+		else if (classRosterArray[i]->GetDegreeProgram() == degree) {
+			classRosterArray[i]->print();
+			cout << endl;
+		}
+	}
+	cout << endl;
+};
+
+
+// Define destructor
+
+Roster::~Roster() {
+	cout << endl << endl;
+	cout << "Destroying roster object and freeing memory..." << endl << endl;
+	cout << "DONE!" << endl;
 
 };

@@ -19,33 +19,48 @@ const string studentData[] =
 int main()
 {   
 
-	// Output course title, programming language, student ID, and name
+	// F1 Output course title, programming language, student ID, and name
 
-	cout << "WGU C867 Scripting and Programming - Applications  -- C++ -- ID:008698673 -- Duncan Gwin" << endl;
+	cout << "WGU C867 Scripting and Programming - Applications  -- C++ -- ID:008698673 -- Duncan Gwin" << endl << endl;
 
-	// Create instance of roster class called classRoster
+	// F2 Create instance of roster class called classRoster
 
 	Roster classRoster;
 
-	// Add each student in studentData to classRoster
+	// F3 Add each student in studentData to classRoster
 
 	for (int i = 0; i < Roster::NUM_STUDENTS; i++) {
 		classRoster.index = i;
 		classRoster.parse(studentData[i]);
 	}
 
-	// Print all students in classRoster
+	// F4.a Print all students in classRoster
 
 	classRoster.printAll();
 
-	// Print Invalid E-mail Address 
+	// F4.b Print Invalid E-mail Addresses 
 
+	classRoster.printInvalidEmails();
+
+	// F4.c Print Average days for each student
 	for (int i = 0; i < Roster::NUM_STUDENTS; i++) {
 		string studentId = classRoster.classRosterArray[i]->GetStudentId();
 		classRoster.printAverageDaysInCourse(studentId);
 	}
+	cout << endl;
 
+	// F4.d Print Students by Degree Program
+	classRoster.printByDegreeProgram(DegreeProgram::SOFTWARE);
 
+	// F4.e Remove Student with ID 'A3'
+	classRoster.remove("A3");
 
+	// F4.f Print all students to verify A3 is gone
+	classRoster.printAll();
+
+	// F4.g Try to remove A3, should output error not found
+	classRoster.remove("A3");
+
+    // F5 Destructor called on main function exit
 	return 0;
 }
