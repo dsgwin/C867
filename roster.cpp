@@ -3,7 +3,7 @@
 #include "roster.h"
 using namespace std;
 
-// Declare parse() function to reformat studentDataTable strings and convert them to student objects
+/* // Declare parse() function to reformat studentDataTable strings and convert them to student objects
 
 void Roster::parse(string studentDataString) {
 
@@ -11,7 +11,7 @@ void Roster::parse(string studentDataString) {
 
 // Define Add function that sets the instance variables from part D1 and updates the roster
 
-void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age,
+void Roster::add(int index, string studentID, string firstName, string lastName, string emailAddress, int age,
 	int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeprogram) {
 
 };
