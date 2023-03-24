@@ -2,7 +2,6 @@
 //
 
 #include <iostream>
-#include "student.h"
 #include "roster.h"
 using namespace std;
 
@@ -18,10 +17,14 @@ const string studentData[] =
 
 
 int main()
-{
+{   
+	Roster studentRoster;
+
 	for (int i = 0; i < 5; i++) {
-		parse(studentData[i]);
+		studentRoster.index = i;
+		studentRoster.parse(studentData[i]);
 		// cout << studentData[i] << endl;
+		studentRoster.printAll();
 	}
 
 

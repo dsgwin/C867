@@ -48,7 +48,7 @@ void Student::print() {
 	cout << '\t';
 	// Print Degree Program
 
-	cout << this->degreeProgram;
+	cout << degreeProgramStrings[(int)this->degreeProgram];
 };
 
 // Mutator Functions to Set Private Variables

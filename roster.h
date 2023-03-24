@@ -1,12 +1,17 @@
 #include <string>
 #include <iostream>
 #define ROSTER_H
-
-
+#include "student.h"
 using namespace std;
+
+
 class Roster {
 
     public:
+		// Index for creating student objects
+
+		int index;
+
 	    // Declare constant value for size of the array
 
 	    static const int NUM_STUDENTS = 5;
@@ -25,7 +30,7 @@ class Roster {
 
 	    // Declare Add function that sets the instance variables from part D1 and updates the roster
 		
-	    void add(string studentID, string firstName, string lastName, string emailAddress, int age, 
+	    void add(int index, string studentID, string firstName, string lastName, string emailAddress, int age, 
 			int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
 
 		// Declare remove function that removes students from the roster by student ID. 
@@ -45,8 +50,6 @@ class Roster {
 
 		void printInvalidEmails();
 
-private:
-
-	int index;
+	
 
 };
