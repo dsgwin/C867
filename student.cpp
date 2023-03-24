@@ -17,7 +17,6 @@ Student::Student() {
 }
 
 // Constructor to pass all student data and build object
-
 Student::Student(string id, string fName, string lName, string email, int studentAge, int days1, int days2, int days3, DegreeProgram degree) {
 	this->studentId = id;
 	this->firstName = fName;
@@ -33,7 +32,7 @@ Student::Student(string id, string fName, string lName, string email, int studen
 
 // Print function to print all student data 
 
-void Student::print() {
+/* void Student::print() {
 	// Print Tab Seperated Student Data
 	cout << this->studentId << '\t' << this->firstName << '\t' << this->lastName << '\t' << this->emailAddress << '\t' << this->age << '\t';
 
@@ -49,8 +48,8 @@ void Student::print() {
 	cout << '\t';
     // Print Degree Program
 
-    cout << degreeProgram;
-}
+    cout << this->degreeProgram;
+} */
 
 // Mutator Functions to Set Private Variables
 

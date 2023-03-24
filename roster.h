@@ -1,10 +1,10 @@
 #include <string>
 #include <iostream>
 #define ROSTER_H
-#include "student.h"
-using namespace std;
 
-class Roster {
+
+using namespace std;
+/* class Roster {
 
     public:
 	    // Declare constant value for size of the array
@@ -40,4 +40,4 @@ class Roster {
 		// Declare printInvalidEmails() function
 
 		void printInvalidEmails();
-};
+}; */

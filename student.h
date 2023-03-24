@@ -5,7 +5,7 @@
 using namespace std;
 
 class Student {
-public:
+  public:
     // Default Constructor
     Student();
 
@@ -41,7 +41,7 @@ public:
     static const int NUM_COURSES = 3;
 
 
-private:
+  private:
     string studentId;
     string firstName;
     string lastName;
