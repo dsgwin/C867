@@ -5,7 +5,7 @@
 #include "roster.h"
 using namespace std;
 
-// Define studentData Input Array 
+// Define studentData Input Array with Strings to Parse
 
 const string studentData[] =
 
