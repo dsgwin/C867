@@ -50,6 +50,9 @@ class Roster {
 
 		void printInvalidEmails();
 
+		// Declare Destructor
+
+
 	
 
 };

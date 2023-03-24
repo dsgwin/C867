@@ -1,16 +1,13 @@
 #include <string>
 #include <iostream>
 #include "roster.h"
+#include <iomanip>
 
 using namespace std;
 
 // Define default constructor
 Roster::Roster() {
-	this->index = 0;
-	for (int i = 0; i < NUM_STUDENTS; ++i) {
-		this->classRosterArray[i] = new Student;
-	}
-	return;
+	Student* classRosterArray[NUM_STUDENTS];
 
 }
 
@@ -20,7 +17,7 @@ Roster::Roster() {
 void Roster::parse(string studentDataString) {
 	// Get String Length
 	size_t endOfString = studentDataString.length();
-	
+
 	// Get initial string containing studentId
 	size_t rhs = studentDataString.find(",");
 	string id = studentDataString.substr(0, rhs);
@@ -79,17 +76,16 @@ void Roster::parse(string studentDataString) {
 		degree = DegreeProgram::SECURITY;
 	}
 
-	
+	add(index, id, fName, lName, email, studentAge, days1, days2, days3, degree);
 
-}
+};
 
 // Define Add function that sets the instance variables from part D1 and updates the roster
 
 void Roster::add(int index, string studentID, string firstName, string lastName, string emailAddress, int age,
 	int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram) {
 
-	classRosterArray[index] = new Student(studentID, firstName, lastName, emailAddress, age,
-		daysInCourse1, daysInCourse2, daysInCourse3, degreeProgram);
+	this->classRosterArray[index] = new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeProgram);
 
 };
 
@@ -104,15 +100,12 @@ void Roster::remove(string studentId) {
 
 void Roster::printAll() {
 
-	cout << "All current students: " << endl;
+	cout << "Current Students:" << endl;
+
 	for (int i = 0; i < NUM_STUDENTS; ++i) {
-		if (classRosterArray[i] == nullptr)
-		{
-			continue;
-		}
-		else {
-			classRosterArray[i]->print();
-		}
+
+		classRosterArray[i]->print();
+		cout << endl;
 	}
 	cout << endl;
 
@@ -121,6 +114,17 @@ void Roster::printAll() {
 // Define printAverageDaysInCourse() function
 
 void Roster::printAverageDaysInCourse(string studentId) {
+	for (int i = 0; i < NUM_STUDENTS; ++i) {
+		if (studentId == classRosterArray[i]->GetStudentId()) {
+			double sum = 0;
+			for (int j = 0; j < classRosterArray[i]->NUM_COURSES; ++j) {
+				sum = sum + (classRosterArray[i]->GetDaysToComplete(j));
+			}
+			double avg = (sum / classRosterArray[i]->NUM_COURSES);
+			cout << fixed << setprecision(1);
+			cout << "Average Days in Course for Student ID \"" << studentId << "\": " << avg << endl;
+		}
+	}
 
 };
 

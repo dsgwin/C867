@@ -33,7 +33,7 @@ class Student {
     string GetLastName();
     string GetEmailAddress();
     int GetAge();
-    int* GetDaysToComplete();
+    int GetDaysToComplete(int index);
     DegreeProgram GetDegreeProgram();
 
     // Define constant for number of courses to use with daysToComplete Array

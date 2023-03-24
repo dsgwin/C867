@@ -34,7 +34,7 @@ Student::Student(string id, string fName, string lName, string email, int studen
 
 void Student::print() {
 	// Print Tab Seperated Student Data
-	cout << this->studentId << '\t' << this->firstName << '\t' << this->lastName << '\t' << this->emailAddress << '\t' << this->age << '\t';
+	cout << this->studentId << '\t' << this->firstName << '\t' << this->lastName << "    " << '\t' << this->emailAddress << " " << '\t' << this->age << '\t';
 
 	// Iterate through daysToComplete array to print comma separated values
 	for (int i = 0; i < NUM_COURSES; i++) {
@@ -104,8 +104,8 @@ string Student::GetEmailAddress() {
 int Student::GetAge() {
 	return this->age;
 }
-int* Student::GetDaysToComplete() {
-	return this->daysToComplete;
+int Student::GetDaysToComplete(int index) {
+	return this->daysToComplete[index];
 }
 DegreeProgram Student::GetDegreeProgram() {
 	return this->degreeProgram;
